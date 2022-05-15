@@ -1,0 +1,35 @@
+:root {
+    --primary-color: #40a9e0;
+    --secondary-color: #268cc3;
+    --primary-bg-color: #268cc3;
+    --secondary-bg-color: #40a9e0;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3{
+    font-weight: 600;
+}
+
+.color-primary{
+    color: var(--primary-color);
+}
+
+.header-logo {
+    height: 50px;
+}
+
+/* Left side bar */
+.left-sidebar.nav .nav-item .nav-link{
+    font-size: 22px;
+    color: black;
+    font-weight: 700;
+}
+.left-sidebar.nav .nav-item .nav-link:hover{
+    color: var(--secondary-color);
+}
