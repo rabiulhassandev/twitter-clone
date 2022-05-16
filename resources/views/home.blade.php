@@ -4,6 +4,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -12,7 +13,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <title>Twitter</title>
+        <title>Twitter - Home Page</title>
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
@@ -38,21 +39,43 @@
         {{-- Main Section --}}
         <section id="main">
             <div class="container pt-4">
-                <div class="row">
+                <div class="row justify-content-between">
                     {{-- left side --}}
                     <div class="col-md-3">
-                        <ul class="nav d-block left-sidebar">
-                            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Explore</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Notification</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Messages</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Bookmarks</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Lists</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">More</a></li>
-                        </ul>
+                        <x-left-sidebar />
                     </div>
                     {{-- left side --}}
+
+                    {{-- Main Content --}}
+                    <div class="col-md-6 mx-auto" style="max-width: 700px;">
+                        {{-- Publish Tweet Panel --}}
+                        <x-publish-tweet-panel />
+                        {{-- Publish Tweet Panel --}}
+
+                        {{-- Tweet Box --}}
+                        <div class="border rounded-10 mb-2">
+                            {{-- Tweet --}}
+                            <x-tweet :tweets='$tweets' />
+                            {{-- Tweet --}}
+                        </div>
+                        {{-- Tweet Box --}}
+
+                    </div>
+                    {{-- Main Content --}}
+
+                    {{-- Friends --}}
+                    <div class="col-md-3">
+                        <div class="friends-card card">
+                            <div class="card-body">
+                                <h3 class="mb-3">Friends</h3>
+
+                                @for ($i = 0; $i < 8; $i++)
+                                    <x-friends />
+                                @endfor
+                            </div>
+                        </div>
+                    </div>
+                    {{-- Friends --}}
                 </div>
             </div>
         </section>

@@ -12,8 +12,9 @@
     box-sizing: border-box;
 }
 
-h1, h2, h3{
+h1, h2, h3, h4, h5, h6{
     font-weight: 600;
+    margin-bottom: 0px !important;
 }
 
 .color-primary{
@@ -32,4 +33,41 @@ h1, h2, h3{
 }
 .left-sidebar.nav .nav-item .nav-link:hover{
     color: var(--secondary-color);
+}
+
+.friends-card{
+    background-color: rgb(25 144 202 / 14%);
+    border-radius: 10px;
+    border: 0px;
+    max-width: 250px;
+    margin: auto;
+}
+
+.friends-card .avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.no-focus.form-control:focus{
+    box-shadow: 0px 0px 0px black !important;
+}
+
+.rounded-full{
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.rounded-10{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.font-weight-700{
+    font-weight: 700 !important;
 }
